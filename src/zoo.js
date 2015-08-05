@@ -42,7 +42,7 @@ Zoo.prototype.isOpen = function () {
 Zoo.prototype.addAnimal = function (animal) {
   if (this.status === "open") {
     for (var i = 0; i < this.animals.length; i++) {
-      if this.animals[i] !== animal {
+      if (this.animals[i] !== animal) {
         this.animals[i].push(animal);
       }
     };
