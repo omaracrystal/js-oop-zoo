@@ -7,7 +7,7 @@ function Animal(name, age, kind){
 
 
 //oink() - returns "oink!" if the instance of an animal is a pig.
-Animal.prototype.oink = function(){
+Animal.prototype.oink = function() {
   if (this.kind === 'Pig'){
     return 'oink';
   } else {
@@ -44,5 +44,7 @@ Animal.prototype.sleep = function(argument){
     return (this.awake === false);
   }
 };
+
+
 
 module.exports = Animal;
