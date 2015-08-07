@@ -51,7 +51,6 @@ describe('Animal', function(){
       expect(animal.feed()).toEqual("NOM NOM NOM");
     });
     it('not should get fed if sleeping', function(){
-
       expect(animal.feed()).toEqual(false);
     });
   });

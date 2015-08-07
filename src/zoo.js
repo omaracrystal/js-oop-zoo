@@ -38,17 +38,32 @@ Zoo.prototype.isOpen = function () {
 }
 
 
-//addAnimal() - a method that adds an animal to the animals array ONLY if the zoo is open, the animal is an instance of the Animal class AND the animal is not already in the animals array.
-Zoo.prototype.addAnimal = function (animal) {
+// addAnimal() - a method that adds an animal to the animals array ONLY if the zoo is open, the animal is an instance of the Animal class AND the animal is not already in the animals array.
+Zoo.prototype.addAnimal = function(animal) {
   if (this.status === "open") {
-    for (var i = 0; i < this.animals.length; i++) {
-      if (this.animals[i] !== animal) {
-        this.animals[i].push(animal);
-      }
-    };
+    if (this.animals.indexOf(animal) === -1 && animal instanceof Animal) {
+        this.animals.push(animal);
+        return true;
+    }
+  } else {
+    return false;
+  }
+};
+
+
+//removeAnimal() - a method that removes an animal from the animals array ONLY if the zoo is open
+Zoo.prototype.removeAnimal = function(animal){
+  if(this.status === 'open' && this.animals.indexOf(animal) !== -1) {
+    this.animals.splice(this.animals.indexOf(animal, 1));
+    return true;
+  }
+  else {
+    return false;
   }
 }
 
 
 
 module.exports = Zoo;
+
+
